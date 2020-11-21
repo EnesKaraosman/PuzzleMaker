@@ -23,4 +23,7 @@ public struct PuzzleElement {
 
     /// Holds information about path and segments. For information purposes only
     public let puzzleUnit: PuzzleUnit
+    
+    /// Represents the position in full puzzle, [row][column]
+    public let elementPosition: (Int, Int)
 }

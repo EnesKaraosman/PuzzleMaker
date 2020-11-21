@@ -199,7 +199,7 @@ public struct PuzzleMaker {
                     let scale = self.image.scale
                     let cropRect = CGRect(x: realPosition.x * scale, y: realPosition.y * scale, width: path.bounds.width * scale, height: path.bounds.height * scale)
 
-                    // Because method CGImageCreateWithImageInRect(...) can fail, we need to hadle it somehow
+                    // Because method CGImageCreateWithImageInRect(...) can fail, we need to handle it somehow
                     if let croppedImage = self.image.cropImage(toRect: cropRect),
                         // Clipping image using previously generated path
                         let clippedImage = croppedImage.clipImage(toPath: path),
@@ -208,7 +208,7 @@ public struct PuzzleMaker {
                         let imageWithLightInnerShadow = imageWithDarkInnerShadow.applyInnerShadow(forPath: path, shadowColor: self.lightInnerShadow.color, shadowOffset: self.lightInnerShadow.offset, shadowBlurRadius: self.lightInnerShadow.blurRadius) {
 
                         // Finally! We got it! 🙌
-                        let puzzleElement = PuzzleElement(image: imageWithLightInnerShadow, position: realPosition, puzzleUnit: puzzleUnit)
+                        let puzzleElement = PuzzleElement(image: imageWithLightInnerShadow, position: realPosition, puzzleUnit: puzzleUnit, elementPosition: (row, column))
 
                         // Secure access to array
                         // It will probably cause performance drops, so this is a area for improvements (e.g. use N x Row arrays to store data)
