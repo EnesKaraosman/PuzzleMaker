@@ -35,4 +35,7 @@ public struct PuzzleElement: Identifiable {
     
     /// Represents the position in full puzzle, [row][column]
     public let elementPosition: (Int, Int)
+    
+    /// To check easily if element is placed on board correctly.
+    public var correctlyPlacedOnBoard: Bool = false
 }
